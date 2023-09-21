@@ -28,6 +28,8 @@ drug_users
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
+The Dyplr tool called "filter" will be used to create a specific subset of the total data so that only the data where the actual drug users appear is showing rather than all of the people not included as a drug user. Then the CandP helper files will be used with R to display the following: numerical descriptive, graphical descriptive, and inferential results.
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -43,7 +45,7 @@ barchartGC(~infected + treatment,data=drug_users)
 barchartGC(~infected + treatment,data=drug_users, type="percent")
 
 ```
-
+Two bar charts were created to compare the data between the people in the data where the first bar chart shows that the majority of the drug users who had aids were using a placebo, but the second chart shows the users of the actual drug have a lower percentage of aids when compared to the placebo which indicates that the drug is effective when compared to a placebo.
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -53,7 +55,7 @@ table1 <- xtabs(~infected + treatment, data=drug_users)
 rowPerc(table1)
 colPerc(table1)
 ```
-
+In the data table, we can see the number of people in each group between those who have aids and those who don't who take the actual drug and those who take the placebo. By looking at the data, we can see that the number of aids cases in the placebo group are much higher than the number of cases in the group using the drug. In fact, the number of cases in the placebo group is among people infected with aids is 3 times higher than those who are taking the drug.
 
 ## Inferential Results
 
@@ -61,7 +63,15 @@ colPerc(table1)
 
 ```{r}
 chisq.test(table1)
+```
+
+
+```{r} 
 chisqtestGC(table1)
+```
+
+
+```{r}  
 fisher.test(table1)
 ```
 
