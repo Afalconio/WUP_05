@@ -45,7 +45,9 @@ barchartGC(~infected + treatment,data=drug_users)
 barchartGC(~infected + treatment,data=drug_users, type="percent")
 
 ```
+
 Two bar charts were created to compare the data between the people in the data where the first bar chart shows that the majority of the drug users who had aids were using a placebo, but the second chart shows the users of the actual drug have a lower percentage of aids when compared to the placebo which indicates that the drug is effective when compared to a placebo.
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -55,7 +57,8 @@ table1 <- xtabs(~infected + treatment, data=drug_users)
 rowPerc(table1)
 colPerc(table1)
 ```
-In the data table, we can see the number of people in each group between those who have aids and those who don't who take the actual drug and those who take the placebo. By looking at the data, we can see that the number of aids cases in the placebo group are much higher than the number of cases in the group using the drug. In fact, the number of cases in the placebo group is among people infected with aids is 3 times higher than those who are taking the drug.
+
+In the data table, we can see the number of people in each group between those who have aids and those who don't who take the actual drug and those who take the placebo. By looking at the data, we can see that the number of aids cases in the placebo group are much higher than the number of cases in the group using the drug. In fact, the number of cases in the placebo group is among people infected with aids is 3 times higher than those who are taking the drug. The drug appears to be more effective in treating aids than the placebo.
 
 ## Inferential Results
 
@@ -74,12 +77,13 @@ chisqtestGC(table1)
 ```{r}  
 fisher.test(table1)
 ```
+
 Three seperate inferential tests were run in this section with varying levels of detail in the description of the data.
-Firstly, the Chi-squared test mainly showed the p-value to highlight the significant difference in the data between placebo users and drug users and how the number of aids cases in the two groups reflected the effectiveness of the drug. The first test showed a p-value of 0.0000001242. The second test by Georgetown College showed a p-value of 0 and the Fisher exact test showed a p-value of 0.0000000423. All of the tests showed that their is a significant difference in the data in the number of aids cases between placebo users and drug users since all of the p-values were less than 0.05.
+Firstly, the Chi-squared test mainly showed the p-value to highlight the significant difference in the data between placebo users and drug users and how the number of aids cases in the two groups reflected the effectiveness of the drug. The first test showed a p-value of 0.0000001242. The second test by Georgetown College showed a p-value of 0 and the Fisher exact test showed a p-value of 0.0000000423. All of the tests showed that their is a significant difference in the data in the number of aids cases between placebo users and drug users since all of the p-values were less than 0.05. The alternative hypothesis of the drug not being effective seems to be ruled out at this point as it has been disproven by the data.
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-The data in the triUmpsal set showed the number of aids cases among users of the actual drug and users of a placebo drug. The data showed that there was a significant difference in the number of aids cases between these two groups with the placebo group having 3 times the number of cases as the group that was using the actual drug. This shows that the drug was effective in its goal for treatment. It is important to note that the subset of drug users had to be filtered in the data to more easily find this specific information within the dataset. The numerical description of the data also supports the evidence of the difference between the drug and the placebo as it showed a p-value that was less than 0.05. Overall, the data showed that the drug was in fact more effective than a placebo.
+The data in the triUmpsal set showed the number of aids cases among users of the actual drug and users of a placebo drug. The data showed that there was a significant difference in the number of aids cases between these two groups with the placebo group having 3 times the number of cases as the group that was using the actual drug. This shows that the drug was effective in its goal for treatment. It is important to note that the subset of drug users had to be filtered in the data to more easily find this specific information within the data set. The numerical description of the data also supports the evidence of the difference between the drug and the placebo as it showed a p-value that was less than 0.05. Overall, the data showed that the drug was in fact more effective than a placebo.
